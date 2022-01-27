@@ -6,7 +6,7 @@ import * as THREE from 'three'
 
 export default function SecondScene({ handleClick, ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('./assets/dogue.gltf')
+  const { nodes, materials } = useGLTF('./assets/model/dogue.gltf')
 
 
   useFrame((state, delta) => {

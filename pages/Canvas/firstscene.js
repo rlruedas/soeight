@@ -12,8 +12,8 @@ export default function FirstScene({ handleClick, setScene, opacity, ...props })
     const [hovered, setHovered] = useState(false)
     const [hidden, setVisible] = useState(false)
 
-    const scene = useGLTF('/assets/scene.glb')
-    const dogue = useGLTF('/assets/dogue.gltf')
+    const scene = useGLTF('/assets/model/scene.glb')
+    const dogue = useGLTF('/assets/model/dogue.gltf')
 
 
     // Animation
