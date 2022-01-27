@@ -2,11 +2,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #1A1C20;
+  color: #F4F4F4;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
-a {
+a{
   color: inherit;
   text-decoration: none;
 }
@@ -14,3 +16,283 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.canvas {
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bgtext {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  text-align: justify;
+  font-size: 10em;
+  font-weight: 900;
+  color: #1A1C20;
+  width: fit-content;
+  line-height: 8rem;
+  z-index: 1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #CF7500;
+}
+
+.header {
+  position: absolute;
+  top: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 100vw;
+  height: 10vh;
+  font-weight: 600;
+  color: inherit;
+  padding-inline: 5em;
+}
+
+.header .logo {
+  display: flex;
+  flex:1;
+  z-index: 3;
+}
+
+.header .logo img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.header .menu {
+  display: flex;
+  flex: 1;
+  justify-content: right;
+}
+
+.header .menu a {
+  font-size: 20px;
+  margin-inline-end: 3em;
+  z-index: 3;
+}
+.header .menu a:hover {
+  color: #F0A500;
+}
+
+.header a.burgerMenu {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  position: absolute;
+  bottom: 5%;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+
+.footer .socialMedia {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.footer .socialMedia a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #202020;
+  background-color: #ffffff;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.footer .socialMedia a:nth-child(1) {
+  font-size: 20px;
+  margin-left: 18%;
+}
+.footer .socialMedia a:nth-child(2) {
+  font-size: 17px;
+  margin-left: 5%;
+}
+
+.footer .socialMedia a:nth-child(1):hover {
+  background-color: #3b5998;
+  color: #ffffff;
+}
+.footer .socialMedia a:nth-child(2):hover {
+  /* background-image:linear-gradient(45deg,#fbad50,#cd486b,#4c68d7,#8a3ab9 ); */
+  background-color: #F0A500;
+  color: #ffffff;
+}
+
+.footer .contactDetails {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+  flex: 1;
+}
+
+.footer .contactDetails a {
+  margin: 5%;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.footer .contactDetails a:hover {
+  color: #F0A500;
+}
+
+.footer .credits {
+  font-weight: 100;
+  margin-top: 5%;
+  font-size: 10px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+
+
+.bubble {
+  text-align: center;
+  background: #F0A500;
+  font-size: 15px;
+  font-weight: 600;
+  width: 10em;
+  color: #202020;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bubblePointer {
+  position: absolute;
+  top: 3.5em;
+  height: 15px;
+  width: 15px;
+  background: #F0A500;
+  transform: rotate(45deg);
+  border-radius: 0 0 0 0;
+}
+
+.bubbleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: -4.7em;
+  bottom: 2.5em;
+}
+
+.bubbleContainer:hover * {
+  background: #202020;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #F0A500;
+  transform: translateX(200em);
+  transition: transform 0.5s ease-in-out;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20%;
+}
+
+.modalContent a {
+  flex:1;
+  font-size: 20px;
+  font-weight: 400;
+  
+}
+
+.close {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  top: 3%;
+  font-size: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4.5em;
+}
+
+.loader {
+  position: absolute;
+  z-index: 50;
+  width: 100vh;
+  height: 100vh;
+  top: 0;
+  bottom:0;
+  right: 0;
+  left: 0;
+}
+
+.back {
+  display: flex;
+  position: absolute;
+  top:1em;
+  left: 1em;
+  color: #F4F4F4;
+  font-size: 3em;
+  z-index: 6;
+}
+
+.back:hover{
+  color: #F0A500;
+  transition: all .3s ease-in-out;
+}
+
+
+
+@media screen and (max-width: 1080px) {
+  .header .menu a:not(:nth-child(3)) {
+    display: none;
+  }
+  .header .menu a.burgerMenu {
+    display: block;
+  }
+  .header .menu {
+    width: 3rem;
+  }
+  .footer {
+    display: none;
+  }
+  .modalContent {
+    font-size: 20px;
+  }
+}
+
