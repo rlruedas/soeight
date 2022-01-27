@@ -81,6 +81,6 @@ export default function Home() {
 }
 
 
-useGLTF.preload('/assets/model/scene.glb')
-useGLTF.preload('/assets/model/dogue.gltf')
+useGLTF.preload('/assets/models/scene.glb')
+useGLTF.preload('/assets/models/dogue.gltf')
 

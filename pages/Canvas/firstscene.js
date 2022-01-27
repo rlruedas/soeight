@@ -12,10 +12,9 @@ export default function FirstScene({ handleClick, setScene, opacity, ...props })
     const [hovered, setHovered] = useState(false)
     const [hidden, setVisible] = useState(false)
 
-    const scene = useGLTF('/assets/model/scene.glb')
-    const dogue = useGLTF('/assets/model/dogue.gltf')
-
-
+    const scene = useGLTF('/assets/models/scene.glb')
+    const dogue = useGLTF('/assets/models/dogue.gltf')
+    
     // Animation
     let mixer;
     if (scene.animations.length) {
